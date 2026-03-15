@@ -36,6 +36,19 @@ Sentence Transformers
 Resume → Skill Extraction → Career Profile → Job Recommendation → Skill Gap Analysis → Market Insights
 
 ---
+## Platform Screenshots
+
+### Home Page
+![Home Page](home_page.png)
+
+### Career Explorer
+![Career Explorer](career_explorer.png)
+
+### Skill Gap Analyzer
+![Skill Gap Analyzer](skill_gap_analyzer.png)
+
+### Market Insights
+![Market Insights](market_insights.png)
 
 ## Example Workflow
 
