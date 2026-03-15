@@ -39,16 +39,16 @@ Resume → Skill Extraction → Career Profile → Job Recommendation → Skill 
 ## Platform Screenshots
 
 ### Home Page
-![Home Page](home_page.png)
+![Home Page](home page.png)
 
 ### Career Explorer
-![Career Explorer](career_explorer.png)
+![Career Explorer](career explorer.png)
 
 ### Skill Gap Analyzer
-![Skill Gap Analyzer](skill_gap_analyzer.png)
+![Skill Gap Analyzer](skill gap analyzer.png)
 
 ### Market Insights
-![Market Insights](market_insights.png)
+![Market Insights](market insights.png)
 
 ## Example Workflow
 
