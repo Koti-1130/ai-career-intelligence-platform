@@ -8,12 +8,10 @@ from src.recommender.job_recommender import recommend_jobs, load_data, prepare_t
 
 st.title("💼 Career Explorer")
 
-st.write(
-    "Discover job opportunities based on your current skills and target role."
-)
+st.write("Discover job opportunities based on your current skills and target role.")
 
 # -----------------------
-# Load Dataset
+# Load dataset
 # -----------------------
 
 df = load_data()
@@ -67,10 +65,14 @@ if skills:
     if filtered_df.empty:
         filtered_df = df
 
+    # -----------------------
     # Apply filters
+    # -----------------------
 
     if remote_filter == "Remote Only":
-        filtered_df = filtered_df[filtered_df["remote"] == True]
+        filtered_df = filtered_df[
+            filtered_df["remote"].astype(str).str.lower().isin(["true", "yes", "remote"])
+        ]
 
     filtered_df = filtered_df[filtered_df["salary_usd"] >= min_salary]
 
@@ -84,7 +86,6 @@ if skills:
         top_n = st.slider("Number of job recommendations", 5, 20, 10)
 
         recommendations = recommend_jobs(skills, filtered_df, top_n)
-
         recommendations = recommendations.reset_index(drop=True)
 
         st.subheader("Recommended Jobs")
@@ -113,7 +114,8 @@ if skills:
                         st.write(f"**Salary:** ${int(job_row['salary_usd']):,}")
 
                     if "remote" in job_row:
-                        st.write("**Remote:**", job_row["remote"])
+                        remote_status = "Yes" if str(job_row["remote"]).lower() in ["true","yes","remote"] else "No"
+                        st.write("**Remote:**", remote_status)
 
                 st.write("**Required Skills:**", row["required_skills"])
 
